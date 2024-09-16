@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // For displaying the timer
-using System.Collections; // Required for IEnumerator and coroutines
 
 public class TargetManager : MonoBehaviour
 {
@@ -17,17 +16,13 @@ public class TargetManager : MonoBehaviour
         totalTargets = targets.Length;
         targetsHit = 0;
         timer = 0f;
-        StartCoroutine(UpdateTimer());
     }
 
-    IEnumerator UpdateTimer()
+    void Update()
     {
-        while (true)
-        {
-            timer += Time.deltaTime;
-            UpdateTimerDisplay();
-            yield return null; // Wait until the next frame
-        }
+        // Update the timer
+        timer += Time.deltaTime;
+        UpdateTimerDisplay();
     }
 
     void UpdateTimerDisplay()
@@ -60,6 +55,5 @@ public class TargetManager : MonoBehaviour
         SceneManager.LoadScene(nextLevelIndex);
     }
 }
-
 
   
