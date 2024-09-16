@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // For displaying the timer
+using System.Collections; // Required for IEnumerator and coroutines
 
 public class TargetManager : MonoBehaviour
 {
@@ -60,3 +61,5 @@ public class TargetManager : MonoBehaviour
     }
 }
 
+
+  
